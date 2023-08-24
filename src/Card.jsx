@@ -1,9 +1,14 @@
-//Este componente deverá receber dados por Props e mostrar as Informações em Tela
+import React from 'react';
+import "./styles.css"
 
-export function Card () {
+
+export function Card({ name, color }) {
   return (
-    <div>
-
+    <div className="cards">
+      <div style={{ backgroundColor: color }} className="cardItem">
+        <p className="name">{name}</p>
+        <p className="color">{color}</p>
+      </div>
     </div>
-  )
+  );
 }
