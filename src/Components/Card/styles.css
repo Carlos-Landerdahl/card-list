@@ -111,7 +111,7 @@ button:hover {
   flex-wrap: wrap;
   padding: 10px;
   align-items: start;
-  justify-content: start;
+  justify-content: center;
 }
 
 .cardItem {
