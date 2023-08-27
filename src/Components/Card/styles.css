@@ -1,5 +1,11 @@
 @import url('../../reset.css');
 
+* {
+  font-family: Poppins, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+}
+
 .container {
   display: flex;
   margin: 0 auto;
