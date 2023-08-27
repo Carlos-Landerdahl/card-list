@@ -1,41 +1,26 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #111111;
-}
-
-* {
-  font-family:  Verdana, Geneva, Tahoma, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .container {
   display: flex;
-  justify-content: start;
+  margin: 0 auto;
   align-items: center;
   flex-direction: column;
+  max-width: 1500px;
 }
 
 .forms {
-  max-width: 1500px;
   display: flex;
+  width: 85vw;
+  max-width: 1200px;
   justify-content: center;
   flex-direction: column;
   background-color: #202020;
   border-radius: 12px;
-  padding: 50px;
+  padding: 32px;
   margin: 10px;
 }
 
 .formInputs {
   display: flex;
   gap: 10px;
-  width: 100%;
   flex-wrap: wrap;
 }
 
@@ -43,21 +28,25 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  width: 100%;
+  flex: 1;
 }
 
 .forms h1 {
   color: white;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
+  font-size: 42px;
+  font-weight: bold;
 }
 
 input {
   background-color: #353535;
   border: none;
   padding:9px;
+  height: 42px;
   border-radius: 12px;
   color: white;
   font-weight: bold;
+  font-size: 16px;
 }
 
 input:focus {
@@ -66,7 +55,8 @@ input:focus {
 }
 
 label {
-  color: white;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.60);
   padding: 5px;
 }
 
@@ -79,21 +69,32 @@ button {
   color: white;
   margin-top: 5px;
   cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  word-wrap: break-word;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+  background-color: #269158;
 }
 
 .cardsContainer {
   display: flex;
+  max-width: 1200px;
   flex-direction: column;
   align-items: start;
   justify-content: start;
   margin: 10px;
   gap: 20px;
-  border-radius: 12px;
-  padding: 10px;
+  padding: 32px;
 }
 
 .cardsContainer h1 {
   color: white;
+  margin-bottom: 32px;
+  font-size: 42px;
+  font-weight: bold;
 }
 
 .divCards {
@@ -103,7 +104,6 @@ button {
   padding: 10px;
   align-items: start;
   justify-content: start;
-  max-width: 900px;
 }
 
 .cardItem {
@@ -129,9 +129,34 @@ button {
 
 .error {
   text-align: center;
-  padding: 0px 20px;
-  margin: 20px 0px;
-  color: #951717;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 12px;
+  color: #b33030;
   font-weight: bold;
   max-width: 550px;
+  background-color: #202020;
+
+}
+
+/* resposive */
+
+@media only screen and (max-width: 500px) {
+  .forms {
+    width: unset;
+  }
+
+  .forms h1 {
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .cardsContainer h1 {
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .cardItem {
+    min-width: 235px;
+  }
 }

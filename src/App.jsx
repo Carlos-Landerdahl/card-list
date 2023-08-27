@@ -1,6 +1,5 @@
 import { useState } from "react"
-import "./styles.css"
-import { Card } from "./Card"
+import { Card } from "./Components/Card"
 
 function App() {
   const [cardList, setCardList] = useState([])
@@ -26,7 +25,7 @@ function App() {
     setNameCard("")
     setColorCard("")
     setErrorMessage("");
-    console.log(newCard);
+    // console.log(newCard);
   }
 
   return (
@@ -37,14 +36,14 @@ function App() {
           <div className="formInputs">
               <div className="inputForm">
                 <label>Nome</label>
-                <input type="text" name="name" id="name" value={nameCard} placeholder="Nome da cor" onChange={(e) => setNameCard(e.target.value)}/>
+                <input type="text" name="name" id="name" value={nameCard}  onChange={(e) => setNameCard(e.target.value)}/>
               </div>
               <div className="inputForm">
                 <label>Cor</label>
-              <input type="text" name="color" id="color" value={colorCard} placeholder="Formato hexadecimal" onChange={(e) => setColorCard(e.target.value)} />
+                <input type="text" name="color" id="color" value={colorCard} placeholder="Formato hexadecimal" onChange={(e) => setColorCard(e.target.value)} />
               </div>
             </div>
-          <button>ADICIONAR</button>
+            <button>ADICIONAR</button>  
         </form>
       </div>
       {errorMessage.length > 0 && <p className="error">{errorMessage}</p>}
