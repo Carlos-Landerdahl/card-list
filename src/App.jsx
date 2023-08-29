@@ -2,23 +2,31 @@ import { useState } from "react"
 import { Card } from "./Components/Card"
 
 function App() {
+  const [formValid, setFormValid] = useState(true)
   const [cardList, setCardList] = useState([])
   const [nameCard, setNameCard] = useState("")
   const [colorCard, setColorCard] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    let valid = true
+    let message = ""
 
     if (nameCard.length < 3 || /^\s/.test(nameCard)) {
-      setErrorMessage("O nome deve conter pelo menos 3 caracteres e não deve começar com espaço em branco.");
-      return;
+      message = "O nome deve conter pelo menos 3 caracteres e não deve começar com espaço em branco."
+      valid = false
     }
 
     if (colorCard.length < 6) {
-      setErrorMessage("A cor deve conter pelo menos 6 caracteres.");
-      return;
+      message += " A cor deve conter pelo menos 6 caracteres."
+      valid = false
     }
+
+    setFormValid(valid)
+    setErrorMessage(message)
+
+    if (!valid) return;
 
     const newCard = { name: nameCard, color: colorCard }
     setCardList((oldList) => [...oldList, newCard])
@@ -30,7 +38,7 @@ function App() {
 
   return (
     <main className="container">
-      <div className="forms">
+      <div className={`forms ${!formValid ? 'formInvalid' : ''}`}>
         <h1>ADICIONAR NOVA COR</h1>
         <form onSubmit={handleSubmit}>
           <div className="formInputs">
